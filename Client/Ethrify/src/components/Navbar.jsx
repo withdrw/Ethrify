@@ -5,6 +5,9 @@ const Navbar = () => {
     return (
         <nav className='w-full flex md:justify-center justify-between'>
             <div className='justify-center '>
+                <AiOutlineClose>
+                    
+                </AiOutlineClose>
                     <img src={logo} alt="logo">
                     </img>
                 <h1>
