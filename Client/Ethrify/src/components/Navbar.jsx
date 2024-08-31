@@ -1,9 +1,19 @@
+import { AiOutlineClose } from 'react-icons/ai';
+import logo from '../../public/logo.jpg';
+
 const Navbar = () => {
     return (
-        <h1>
-            This is the navbar !
-        </h1>
-    )
+        <nav className='w-full flex md:justify-center justify-between'>
+            <div className='justify-center '>
+                    <img src={logo} alt="logo">
+                    </img>
+                <h1>
+                    This is the navbar !
+                </h1>
+            </div>
+
+        </nav>
+     )
 }
 
 export default Navbar;
