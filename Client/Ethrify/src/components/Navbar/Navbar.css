@@ -1,11 +1,11 @@
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* Space between logo and navbar-list */
-    align-items: center;            /* Align items vertically */
+    justify-content: space-between; 
+    align-items: center;            
     border-bottom: 2px solid black;
     max-height: 80px;
     padding: 5px 0 5px 0px;
-    width: 100%;                    /* Ensure full-width layout */
+    width: 100%;           
 }
 
 .navbar-list {
