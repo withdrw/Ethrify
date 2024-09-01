@@ -1,5 +1,5 @@
-import { AiOutlineClose } from 'react-icons/ai';
-import { IoIosMenu } from "react-icons/io";
+// import { AiOutlineClose } from 'react-icons/ai';
+// import { IoIosMenu } from "react-icons/io";
 import { BsPersonCircle } from "react-icons/bs";
 import logo from '/logo.jpg';
 import { useState } from 'react';
