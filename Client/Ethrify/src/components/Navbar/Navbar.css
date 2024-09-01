@@ -1,4 +1,33 @@
-.navbar{
+.navbar-container{
     display:flex;
+    border-bottom: 2px solid black;
+    justify-content: space-around;
+    max-height: 80px;
+}
 
+.navbar-list {
+    list-style: none;
+    text-align: left;
+    border: 2px solid black;
+    height: 70px;
+    padding: 2px 0px 2px 0px;
+    display: flex;
+}
+
+.props{
+    display: flex;
+    padding: 20px 10px 20px 10px;
+    justify-content: space-between;
+
+}
+
+.logo{
+    height: 40px;
+    width: 80px;
+}
+
+.main-image{
+    display: flex;
+    align-items: start;
+    padding-right: 20%;
 }
