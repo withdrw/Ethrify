@@ -2,20 +2,25 @@
     display:flex;
     border-bottom: 2px solid black;
     justify-content: space-around;
-    max-height: 80px;
+    max-height: 100px;
+    height: 100px;
 }
 
 .navbar-list {
+    align-items: center;
     list-style: none;
     text-align: left;
     border: 2px solid black;
     height: 70px;
     padding: 2px 0px 2px 0px;
     display: flex;
+    margin-top: 10px;
+
 }
 
 .props{
     display: flex;
+    align-items: center;
     padding: 20px 10px 20px 10px;
     justify-content: space-between;
 
