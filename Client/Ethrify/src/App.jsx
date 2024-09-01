@@ -3,7 +3,7 @@ import { Navbar , Footer , Welcome , Loader , Transactions } from "./components"
 const App = () => {
   return (
     <div className="app-component">
-      <div className="main-page">
+      <div>
         <Navbar />
         <Welcome />
       </div>

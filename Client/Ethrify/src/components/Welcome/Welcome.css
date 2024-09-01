@@ -1,7 +1,32 @@
 .welcome-container{
     display: flex;
-    justify-content: start;
+    justify-content: center;
+    max-height: 800px;
+    height: 800px;
+    /* border: 2px solid black; */
+    align-items: center;
+    margin-top: 20px;
+
+}
+.welcome-page{
+    background-color: blue;
+  height: 800px;
+    width: 800px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+}
+
+.welcome-sub{
+    background-color: blue;
+    margin-left: 180px;
+    height: 800px;
+    width: 800px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+}
+.sub-main{
     height: 400px;
-    width: 500px;
-    border: 5px solid black;
+    width: 400px;
 }
