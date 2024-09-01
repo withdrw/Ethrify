@@ -1,5 +1,6 @@
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoIosMenu } from "react-icons/io";
+import { BsPersonCircle } from "react-icons/bs";
 import logo from '/logo.jpg';
 import { useState } from 'react';
 import './Navbar.css'
@@ -24,6 +25,14 @@ const Navbar = () => {
                     <NavbarItem key={item+index} title={item} />
                 ))}
             </ul>
+            <div className='navbar-login'>
+                <button className='navbar-login'>
+                    <p className='login-class'>
+                        Login
+                    </p>
+                    <BsPersonCircle/>
+                </button>
+            </div>
         </div>
      )
 }

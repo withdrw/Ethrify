@@ -1,23 +1,30 @@
-.navbar-container{
-    display:flex;
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Space between logo and navbar-list */
+    align-items: center;            /* Align items vertically */
     border-bottom: 2px solid black;
-    justify-content: space-around;
     max-height: 80px;
+    padding: 5px 0 5px 0px;
+    width: 100%;                    /* Ensure full-width layout */
 }
 
 .navbar-list {
     list-style: none;
-    text-align: left;
-    border: 2px solid black;
-    height: 70px;
-    padding: 2px 0px 2px 0px;
     display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 70px;
+    padding: 2px 0;
+    width: 100%;               
+    /* border: 2px solid black; */
+    margin-left: 10px;
 }
 
 .props{
-    display: flex;
-    padding: 20px 10px 20px 10px;
-    justify-content: space-between;
+    text-align: center;
+    padding: 20px 40px 20px 40px;
+    /* justify-content: space-between; */
+    margin: 0 30px;
 
 }
 
@@ -29,5 +36,16 @@
 .main-image{
     display: flex;
     align-items: start;
-    padding-right: 20%;
+    padding-right: 40px;
+    width: 80px;
+}
+
+.navbar-login {
+    margin-right: 30px;
+    display: flex;
+    padding: 4px 4px;
+}
+
+.login-class{
+    padding-right: 4px;
 }
