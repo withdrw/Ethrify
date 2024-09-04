@@ -46,5 +46,15 @@ contract Payments {
             time: block.timestamp,
             reference: reference
         }));
-}
+        emit Payment(msg.sender, recipient, value, note, block.timestamp, reference);
+    }
+
+    function paymentCount() public view returns (uint256) {
+        return numOfPayments;
+    }
+
+       // Function to get all payment records
+    function getAllPayments() external view returns (PaymentInfo[] memory) {
+        return paymentRecords;
+    }
 }
