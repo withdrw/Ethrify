@@ -2,16 +2,16 @@
 pragma solidity ^0.8.24;
 
 contract Payments {
-    uint256 public numOfPayments;  
+    uint256 public numOfPayments;
 
     // Event for logging payment details
     event Payment(
-        address from, 
-        address to, 
-        uint256 value, 
-        string note, 
-        uint256 time, 
-        string reference
+        address from,
+        address to,
+        uint256 value,
+        string note,
+        uint256 time,
+        string ref
     );
 
     // Struct to store individual payment information
@@ -21,32 +21,32 @@ contract Payments {
         uint256 value;
         string note;
         uint256 time;
-        string reference;
+        string ref;
     }
 
     // Private array to store all payments
-    PaymentInfo[] private paymentRecords;
+    PaymentInfoStruct[] private paymentRecords;
 
     // Function to initiate a payment transaction
     function recordPayment(
-        address payable recipient, 
-        address payable sender,
-        uint256 amount, 
-        string calldata note, 
-        string calldata reference
+        address payable recipient,
+        // address payable sender,
+        uint256 amount,
+        string calldata note,
+        string calldata ref
     ) public {
-        numOfPayments++;  
+        numOfPayments++;
 
         // Create a new payment record and add it to the array
         paymentRecords.push(PaymentInfoStruct({
             payer: msg.sender,
             payee: recipient,
-            value: value,
+            value: amount,
             note: note,
             time: block.timestamp,
-            reference: reference
+            ref: ref
         }));
-        emit Payment(msg.sender, recipient, value, note, block.timestamp, reference);
+        emit Payment(msg.sender, recipient, amount, note, block.timestamp, ref);
     }
 
     function paymentCount() public view returns (uint256) {
@@ -54,7 +54,7 @@ contract Payments {
     }
 
        // Function to get all payment records
-    function getAllPayments() external view returns (PaymentInfo[] memory) {
+    function getAllPayments() external view returns (PaymentInfoStruct[] memory) {
         return paymentRecords;
     }
 }
