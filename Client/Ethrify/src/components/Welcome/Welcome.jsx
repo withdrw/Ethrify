@@ -1,7 +1,12 @@
 import "./Welcome.css";
 import test from '/test.jpg'
-
+import { TransactionContext } from "../../context/TransactionContext";
+import { useContext } from "react";
 const Welcome = () => {
+  const { value } = useContext(TransactionContext)
+
+  console.log(value)
+
   return (
     <div className="welcome-container">
       <div className="welcome-page">
