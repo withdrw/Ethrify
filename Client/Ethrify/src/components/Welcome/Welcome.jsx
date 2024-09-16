@@ -4,10 +4,8 @@ import { PaymentContext } from "../../context/PaymentContext";
 import { useContext } from "react";
 const Welcome = () => {
   // desctrust the value from provider
-  const context = useContext(PaymentContext);
-  const value = context.value;
-
-  console.log(value)
+  const { connectToWallet } = useContext(PaymentContext);
+  console.log(connectToWallet)
 
   return (
     <div className="welcome-container">
@@ -37,6 +35,12 @@ const Welcome = () => {
               <div className="sub-image">
                     <img className="sub-main" src={test} alt="" />
               </div>
+      </div>
+      <div className="connect-button">
+        <button onClick={connectToWallet}>
+          Connect Wallet
+        </button>
+
       </div>
     </div>
   );
