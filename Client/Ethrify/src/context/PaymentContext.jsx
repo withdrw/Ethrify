@@ -26,12 +26,11 @@ const getEthereumContract = () => {
 
 // provides other components access to the context value 
 export const PaymentProvider = ({children}) => {
-    const [connectAccount, setConnectAccount] = useState();
+    const [connectedAccount, setConnectedAccount] = useState();
     const checkWalletConnection = async () => {
         if(!ethereum){
             alert("Your wallet is not connected. Make sure you have metamask connected");
         }
-
         try {
             // Request the list of accounts connected to MetaMask
             const accounts = await window.ethereum.request({ method: "eth_accounts" });
@@ -39,7 +38,8 @@ export const PaymentProvider = ({children}) => {
             if(accounts.length === 0){
                 alert("No wallet is connected. Please connect a wallet.");
             } else {
-                console.log("Connected account:", accounts[0]);
+                console.log("Connected account:", accounts);
+                setConnectedAccount(accounts[0]);
             }
         } catch (error) {
             console.error("Error fetching accounts:", error);
@@ -53,8 +53,7 @@ export const PaymentProvider = ({children}) => {
                 alert("Your wallet is not connected. Make sure you have metamask connected");
             }
             const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-            setConnectAccount(accounts[0]);
-
+            setConnectedAccount(accounts[0]);
 
         }catch (error){
             console.log(error);
@@ -67,7 +66,7 @@ export const PaymentProvider = ({children}) => {
 
     return (
         //pass down context value with any child component inside PaymentProvider will have access to PaymentContext value
-        <PaymentContext.Provider value={{connectToWallet}}>
+        <PaymentContext.Provider value={{connectToWallet, connectedAccount}}>
             {children}
         </PaymentContext.Provider>
     )

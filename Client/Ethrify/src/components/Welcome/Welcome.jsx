@@ -4,7 +4,7 @@ import { PaymentContext } from "../../context/PaymentContext";
 import { useContext } from "react";
 const Welcome = () => {
   // desctrust the value from provider
-  const { connectToWallet } = useContext(PaymentContext);
+  const { connectToWallet, connectedAccount } = useContext(PaymentContext);
   console.log(connectToWallet)
 
   return (
@@ -40,8 +40,8 @@ const Welcome = () => {
         <button onClick={connectToWallet}>
           Connect Wallet
         </button>
-
       </div>
+      
     </div>
   );
 };
