@@ -1,9 +1,11 @@
 import "./Welcome.css";
 import test from '/test.jpg'
-import { TransactionContext } from "../../context/TransactionContext";
+import { PaymentContext } from "../../context/PaymentContext";
 import { useContext } from "react";
 const Welcome = () => {
-  const { value } = useContext(TransactionContext)
+  // desctrust the value from provider
+  const context = useContext(PaymentContext);
+  const value = context.value;
 
   console.log(value)
 
