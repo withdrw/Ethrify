@@ -37,11 +37,13 @@ const Welcome = () => {
               </div>
       </div>
       <div className="connect-button">
-        <button onClick={connectToWallet}>
+        {connectedAccount ? null : (
+          <button onClick={connectToWallet}>
           Connect Wallet
         </button>
+        )}
       </div>
-      
+
     </div>
   );
 };
