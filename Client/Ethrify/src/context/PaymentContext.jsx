@@ -30,7 +30,26 @@ export const PaymentProvider = ({children}) => {
         if(!ethereum){
             alert("Your wallet is not connected. Make sure you have metamask connected");
         }
+
+        try {
+            // Request the list of accounts connected to MetaMask
+            const accounts = await window.ethereum.request({ method: "eth_accounts" });
+            
+            if(accounts.length === 0){
+                alert("No wallet is connected. Please connect a wallet.");
+            } else {
+                console.log("Connected account:", accounts[0]);
+            }
+        } catch (error) {
+            console.error("Error fetching accounts:", error);
+            alert("An error occurred while checking wallet connection.");
+        }
     }
+
+    useEffect(() => {
+        checkWalletConnection()
+    }, [])
+
     return (
         //pass down context value with any child component inside PaymentProvider will have access to PaymentContext value
         <PaymentContext.Provider value={{value:'test'}}>
