@@ -3,8 +3,8 @@ import test from '/test.jpg'
 import { PaymentContext } from "../../context/PaymentContext";
 import { useContext } from "react";
 const Welcome = () => {
-  // desctrust the value from provider
-  const { connectToWallet, connectedAccount } = useContext(PaymentContext);
+  // destruct the value from provider
+  const { connectToWallet, connectedAccount, setFormData, formData, handleChange  } = useContext(PaymentContext);
   console.log(connectToWallet)
 
   return (
