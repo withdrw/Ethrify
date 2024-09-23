@@ -1,21 +1,23 @@
 .navbar-container {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;            
+    justify-content: space-around;
+
+    align-items: center;
     border-bottom: 2px solid black;
     max-height: 80px;
     padding: 5px 0 5px 0px;
-    width: 100%;           
+    width: 100%;
 }
 
 .navbar-list {
     list-style: none;
     display: flex;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: space-around;
+
+    align-items: center;
     height: 70px;
     padding: 2px 0;
-    width: 100%;               
+    width: 70%;
     /* border: 2px solid black; */
     margin-left: 10px;
 }
@@ -44,9 +46,26 @@
     margin-right: 30px;
     display: flex;
     padding: 4px 4px;
+    border-radius: 8px;
 }
 
 .login-class{
     padding-right: 4px;
 }
+.navbar-buttons{
+    padding: 5px;
+    border-radius: 8px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none;
+}
 
+.dropdown-menu.show {
+  display: block;
+}

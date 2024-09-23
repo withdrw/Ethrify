@@ -24,17 +24,17 @@ const getEthereumContract = () => {
 }
 
 
-// provides other components access to the context value 
+// provides other components access to the context value
 export const PaymentProvider = ({children}) => {
     const [connectedAccount, setConnectedAccount] = useState();
     const [formData, setFormData] = useState({ sendTo: '', amount: '', note: '', ref : ''});
-     
-    // const handleChange = (e, name) => {
-    //     setFormData(prevState => {
-    //         const updatedFormData = Object.assign({}, prevState);
-    //         updatedFormData[name] = e.target.value;
-    //         // return updatedFormData;
-    //     });
+
+    const handleChange = (e, name) => {
+        setFormData(prevState => {
+            const updatedFormData = Object.assign({}, prevState);
+            updatedFormData[name] = e.target.value;
+            // return updatedFormData;
+        });
     }
 
 
@@ -45,7 +45,7 @@ export const PaymentProvider = ({children}) => {
         try {
             // Request the list of accounts connected to MetaMask
             const accounts = await window.ethereum.request({ method: "eth_accounts" });
-            
+
             if(accounts.length === 0){
                 alert("No wallet is connected. Please connect a wallet.");
             } else {
@@ -75,7 +75,7 @@ export const PaymentProvider = ({children}) => {
         checkWalletConnection()
     }, [])
 
-    return (
+    return(
         //pass down context value with any child component inside PaymentProvider will have access to PaymentContext value
         <PaymentContext.Provider value={{connectToWallet, connectedAccount, formData, setFormData, handleChange}}>
             {children}
