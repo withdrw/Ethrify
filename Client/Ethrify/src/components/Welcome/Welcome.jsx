@@ -7,6 +7,17 @@ const Welcome = () => {
   const { connectToWallet, connectedAccount, setFormData, formData, handleChange  } = useContext(PaymentContext);
   console.log(connectToWallet)
 
+  const handleSubmit = () => {
+    const {addressTo, amount, note, ref} = formData;
+    e.preventDefault();
+
+    if(!addressTo && !amount && !note && !ref){
+      alert("Fill in all the fields before submitting");
+    }
+
+    sendPayment
+  }
+
   return (
     <div className="welcome-container">
       <div className="welcome-page">
@@ -42,6 +53,43 @@ const Welcome = () => {
           Connect Wallet
         </button>
         )}
+      </div>
+      <div>
+        <input 
+          placeholder="To" 
+          name="addressTo" 
+          type="text"
+          handleChange={handleChange}
+          />
+          <input 
+          placeholder="Amount" 
+          name="amount" 
+          type="number"
+          handleChange={handleChange}
+          />
+          <input 
+          placeholder="Amount" 
+          name="amount" 
+          type="number"
+          handleChange={handleChange}
+          />
+          <input 
+          placeholder="Note" 
+          name="note" 
+          type="text"
+          handleChange={handleChange}
+          />
+          <input 
+          placeholder="Ref" 
+          name="ref" 
+          type="text"
+          handleChange={handleChange}
+          />
+      </div>
+      <div className="send-button">
+          <button onClick={handleSubmit}>
+          Send
+        </button>
       </div>
 
     </div>

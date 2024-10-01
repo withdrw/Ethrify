@@ -21,6 +21,7 @@ const getEthereumContract = () => {
     //     signer,
     //     paymentContract}
     //  )
+    return paymentContract;
 }
 
 
@@ -29,14 +30,13 @@ export const PaymentProvider = ({children}) => {
     const [connectedAccount, setConnectedAccount] = useState();
     const [formData, setFormData] = useState({ sendTo: '', amount: '', note: '', ref : ''});
      
-    // const handleChange = (e, name) => {
-    //     setFormData(prevState => {
-    //         const updatedFormData = Object.assign({}, prevState);
-    //         updatedFormData[name] = e.target.value;
-    //         // return updatedFormData;
-    //     });
+    const handleChange = (e, name) => {
+        setFormData(prevState => {
+            const updatedFormData = Object.assign({}, prevState);
+            updatedFormData[name] = e.target.value;
+            // return updatedFormData;
+        });
     }
-
 
     const checkWalletConnection = async () => {
         if(!ethereum){
@@ -71,8 +71,22 @@ export const PaymentProvider = ({children}) => {
         }
     }
 
+    // const sendPayment = async () => {
+    //     try{
+    //         if(ethereum) {
+    //             const { addressTo, amount, note, ref} = formData;
+    //             const paymentContract = getEthereumContract();
+    //             const parsedAmount = ethers.utils.parseEther(amount)
+
+    //             ethereum.request({
+    //                 method
+    //             })
+    //         }
+    //     }
+    // }
+
     useEffect(() => {
-        checkWalletConnection()
+        checkWalletConnection();
     }, [])
 
     return (

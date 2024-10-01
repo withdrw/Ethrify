@@ -20,11 +20,11 @@ const Navbar = () => {
             <div className='main-image'>
                 <img className='logo' src={logo} alt="logo"/>
             </div>
-            <ul className='navbar-list'>
+            {/* <ul className='navbar-list'>
                 {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index)=>(
                     <NavbarItem key={item+index} title={item} />
                 ))}
-            </ul>
+            </ul> */}
             <div className='navbar-login'>
                 <button className='navbar-login'>
                     <p className='login-class'>
