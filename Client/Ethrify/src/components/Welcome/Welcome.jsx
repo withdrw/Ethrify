@@ -11,15 +11,16 @@ const Welcome = () => {
     <div className="welcome-container">
       <div className="welcome-page">
         <h1 className="welcome-title">
-          {/* Send crypto anywhere & anytime .  Explore the Crypto world with us where you can easily buy and sell cryptocurrencies. */}
-          Quanta iusteque iste Rutilius nullus Terentii scribi optari
-          praeceptrice appellant semel doctrina similique petentium gaudemus suo
-          successionem maledici vera eventurum male summum! Coniuncta intervalla
-          volunt omnes disputationi non maledici paene; Diligenter propter
-          Chremes intuemur expleantur umbram frequenter physicis dicat
-          certissimam Multoque laetetur, Omnesque Phaedrum multis ecce
-          loqueretur concessum Aristippi videamus quales corporisque efficit
+         Send Crypto Across the world
         </h1>
+        <p>Explore the crypto world. Buy and sell cryptocurrencies easily on Ethrify. </p>
+      <div className="connect-button">
+        {connectedAccount ? null : (
+          <button onClick={connectToWallet}>
+          Connect Wallet
+        </button>
+        )}
+      </div>
       </div>
       <div className="welcome-sub">
         <h1 className="welcome-subtitle">
@@ -35,13 +36,6 @@ const Welcome = () => {
               <div className="sub-image">
                     <img className="sub-main" src={test} alt="" />
               </div>
-      </div>
-      <div className="connect-button">
-        {connectedAccount ? null : (
-          <button onClick={connectToWallet}>
-          Connect Wallet
-        </button>
-        )}
       </div>
 
     </div>

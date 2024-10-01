@@ -8,14 +8,22 @@ import "./Navbar.css";
 
 
 const Navbar = () => {
-    const [showDropdown, setShowDropdown] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleAlert = () => {
         alert('Feature is currently in progress')
     }
-      const handleLoginClick = () => {
-        setShowDropdown(!showDropdown);
-      };
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+
   return (
     <div className="navbar-container">
       <div className="main-image">
@@ -33,27 +41,39 @@ const Navbar = () => {
           </button>
         </li>
         <li>
-          <button
-
-            className="navbar-buttons"
-          >
+          <button onClick={handleAlert} className="navbar-buttons">
             <a>Transactions</a>
           </button>
         </li>
         <li>
-          <button
-
-            className="navbar-buttons"
-          >
+          <button onClick={handleAlert} className="navbar-buttons">
             <a>Wallets</a>
           </button>
         </li>
       </ul>
       <div className="navbar-login">
-        <button className="navbar-login">
-          <p className="login-class">Login</p>
-          <BsPersonCircle />
+        <button className="navbar-btn">
+            <BsPersonCircle onClick={toggleMenu} />
         </button>
+        {showMenu && (
+          <div className="dropdown-content">
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="username"
+              />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="password"
+              />
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );
