@@ -30,3 +30,9 @@
     height: 400px;
     width: 400px;
 }
+
+.send-money-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}

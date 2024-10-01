@@ -1,5 +1,5 @@
 import "./App.css";
-import { Navbar , Footer , Welcome , Loader , Transactions } from "./components";
+import { Navbar , Footer , Welcome , Loader  } from "./components";
 const App = () => {
   return (
     <div className="app-component">
@@ -7,7 +7,6 @@ const App = () => {
         <Navbar />
         <Welcome />
       </div>
-      <Transactions />
       <Footer />
    </div>
   )

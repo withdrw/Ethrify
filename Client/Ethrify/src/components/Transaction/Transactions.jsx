@@ -1,7 +1,7 @@
 const Transactions = () => {
     return (
         <h1>
-            This is the Transactions !
+            
         </h1>
     )
 }
