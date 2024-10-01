@@ -42,19 +42,8 @@ const Welcome = () => {
           Chremes intuemur expleantur umbram frequenter physicis dicat
           certissimam Multoque laetetur, Omnesque Phaedrum multis ecce
           loqueretur concessum Aristippi videamus quales corporisque efficit
-              </h1>
-              <div className="sub-image">
-                    <img className="sub-main" src={test} alt="" />
-              </div>
-      </div>
-      <div className="connect-button">
-        {connectedAccount ? null : (
-          <button onClick={connectToWallet}>
-          Connect Wallet
-        </button>
-        )}
-      </div>
-      <div>
+        </h1>
+      <div className="send-money-input">
         <input 
           placeholder="To" 
           name="addressTo" 
@@ -91,6 +80,14 @@ const Welcome = () => {
           Send
         </button>
       </div>
+      </div>
+      {/* <div className="connect-button">
+        {connectedAccount ? null : (
+          <button onClick={connectToWallet}>
+          Connect Wallet
+        </button>
+        )}
+      </div> */}
 
     </div>
   );
